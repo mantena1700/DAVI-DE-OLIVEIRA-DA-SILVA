@@ -3,14 +3,21 @@ import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-  // Cast process to any to avoid "Property 'cwd' does not exist on type 'Process'" error
-  // occurring due to potential type definition mismatches in the project environment.
+  // Carrega variáveis de ambiente. O cast para 'any' evita erro de tipagem no Node.js
   const env = loadEnv(mode, (process as any).cwd(), '');
+  
   return {
     plugins: [react()],
-    base: './', // Essencial para hospedagem compartilhada como Hostinger
+    // IMPORTANTE: base './' faz com que os arquivos procurem seus recursos na mesma pasta
+    // e não na raiz do domínio. Essencial para Hostinger.
+    base: './', 
+    build: {
+      outDir: 'dist',
+      assetsDir: 'assets',
+      sourcemap: false,
+    },
     define: {
-      // Permite que o código continue usando process.env.API_KEY
+      // Injeta a API Key no código final durante o build
       'process.env.API_KEY': JSON.stringify(env.API_KEY),
     },
   };
