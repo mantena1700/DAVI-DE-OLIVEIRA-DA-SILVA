@@ -20,7 +20,8 @@ const Hero: React.FC = () => {
           loop 
           muted 
           playsInline 
-          className="w-full h-full object-cover opacity-30 grayscale contrast-125"
+          className="w-full h-full object-cover opacity-40 grayscale contrast-125"
+          // Vídeo mais leve e focado em "connections/data" em vez de globo
           src="https://assets.mixkit.co/videos/preview/mixkit-abstract-network-connection-lines-2999-large.mp4"
         />
       </div>

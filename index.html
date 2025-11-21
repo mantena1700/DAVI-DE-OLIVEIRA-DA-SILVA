@@ -39,14 +39,16 @@
         100% { background-position: 0% 50%; }
       }
       
+      /* New Animation for Neon Text Loop */
       @keyframes gradient-x {
         0% { background-position: 0% 50%; }
         100% { background-position: 200% 50%; }
       }
 
+      /* New Animation for Hero Text Zoom */
       @keyframes slow-zoom {
         0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.02); }
+        50% { transform: scale(1.05); }
       }
 
       @keyframes focus-pulse {
@@ -55,13 +57,14 @@
         100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); border-color: rgba(139, 92, 246, 0.8); }
       }
 
+      /* Infinite Scroll for Ticker */
       @keyframes scroll {
         0% { transform: translateX(0); }
         100% { transform: translateX(-50%); }
       }
 
       .animate-scroll {
-        animation: scroll 40s linear infinite;
+        animation: scroll 30s linear infinite;
       }
       
       .animate-scroll:hover {
@@ -90,7 +93,7 @@
         animation: gradientMove 5s ease infinite;
       }
 
-      /* Super Neon Text Animation */
+      /* Super Neon Text Animation Logic */
       .animate-gradient-text {
         background: linear-gradient(
           to right,
@@ -156,17 +159,19 @@
   <script type="importmap">
 {
   "imports": {
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
-    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.0/client",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "vite": "https://aistudiocdn.com/vite@^7.2.4",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
   }
 }
 </script>
 </head>
   <body>
     <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
